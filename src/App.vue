@@ -1,11 +1,15 @@
 <template>
   <div id="app">
-    <h1>{{ msg }}</h1>
+      <Countdown date="August 15, 2016"></Countdown>
   </div>
 </template>
 
 <script>
+import Countdown from './components/Countdown.vue';
+
 export default {
+    components: { Countdown },
+
   data () {
     return {
       // note: changing this line won't causes changes
@@ -21,5 +25,16 @@ export default {
 <style>
 body {
   font-family: Helvetica, sans-serif;
+}
+
+#app{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 </style>
