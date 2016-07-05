@@ -1,18 +1,18 @@
 <template>
     <div class="block">
-        <p class="digit">{{ days }}</p>
+        <p class="digit">{{ days | two_digits }}</p>
         <p class="text">Days</p>
     </div>
     <div class="block">
-        <p class="digit">{{ hours }}</p>
+        <p class="digit">{{ hours | two_digits }}</p>
         <p class="text">Hours</p>
     </div>
     <div class="block">
-        <p class="digit">{{ minutes }}</p>
+        <p class="digit">{{ minutes | two_digits }}</p>
         <p class="text">Minutes</p>
     </div>
     <div class="block">
-        <p class="digit">{{ seconds }}</p>
+        <p class="digit">{{ seconds | two_digits }}</p>
         <p class="text">Seconds</p>
     </div>
 </template>
@@ -59,6 +59,8 @@ export default {
 
 </script>
 <style>
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400|Roboto:100);
+
 .block {
     display: flex;
     flex-direction: column;
@@ -66,14 +68,21 @@ export default {
 }
 
 .text {
-    font-size: 20px;
+    color: #1abc9c;
+    font-size: 40px;
+    font-family: 'Roboto Condensed', serif;
+    font-weight: 400;
     margin-top:10px;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .digit {
-    font-size: 50px;
-    margin-top:10px;
-    margin-bottom: 10px;
+    color: #ecf0f1;
+    font-size: 150px;
+    font-weight: 100;
+    font-family: 'Roboto';
+    margin: 10px;
+    text-align: center;
 }
 </style>

@@ -28,6 +28,7 @@ body {
 }
 
 #app{
+    background-color: #34495e;
     position: absolute;
     display: flex;
     align-items: center;
