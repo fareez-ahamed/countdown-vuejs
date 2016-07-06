@@ -81,7 +81,7 @@ export default {
     color: #ecf0f1;
     font-size: 150px;
     font-weight: 100;
-    font-family: 'Roboto';
+    font-family: 'Roboto', serif;
     margin: 10px;
     text-align: center;
 }

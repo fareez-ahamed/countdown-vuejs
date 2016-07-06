@@ -9,33 +9,19 @@ import Countdown from './components/Countdown.vue';
 
 export default {
     components: { Countdown },
-
-  data () {
-    return {
-      // note: changing this line won't causes changes
-      // with hot-reload because the reloaded component
-      // preserves its current state and we are modifying
-      // its initial state.
-      msg: 'Hello Vue!'
-    }
-  }
 }
 </script>
 
 <style>
-body {
-  font-family: Helvetica, sans-serif;
-}
-
 #app{
-    background-color: #34495e;
-    position: absolute;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    top:0;
-    left: 0;
     bottom: 0;
+    background-color: #34495e;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: absolute;
     right: 0;
+    top:0;
 }
 </style>
