@@ -13,7 +13,7 @@ to get a timer like this
 ![Countdown Timer made using Vue.js](countdown-vue.png)
 
 For more details oh how the component was developed, checkout
-[Countdown Timer using Vue.js]()
+[Countdown Timer using Vue.js](http://fareez.info/blog/countdown-timer-using-vuejs/)
 
 ## Build Setup
 
