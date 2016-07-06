@@ -2,6 +2,19 @@
 
 > A Countdown timer using Vue.js
 
+Do the following code
+
+```html
+<countdown date="August 15, 2016"></countdown>
+```
+
+to get a timer like this
+
+![Countdown Timer made using Vue.js](countdown-vue.png)
+
+For more details oh how the component was developed, checkout
+[Countdown Timer using Vue.js]()
+
 ## Build Setup
 
 ``` bash

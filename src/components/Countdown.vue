@@ -48,11 +48,11 @@ export default {
         },
 
         hours() {
-            return Math.trunc((this.date - this.now) / 60 / 60) % 60;
+            return Math.trunc((this.date - this.now) / 60 / 60) % 24;
         },
 
         days() {
-            return Math.trunc((this.date - this.now) / 60 / 60 / 24) % 60;
+            return Math.trunc((this.date - this.now) / 60 / 60 / 24);
         }
     }
 }
