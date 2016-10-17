@@ -17,56 +17,56 @@
     </div>
 </template>
 <script>
-export default {
+    export default {
 
-    ready() {
-        window.setInterval(() => {
-            this.now = Math.trunc((new Date()).getTime() / 1000);
-        },1000);
-    },
-
-    props : {
-        date : {
-            type: Number,
-            coerce: str => Math.trunc(Date.parse(str) / 1000)
-        }
-    },
-
-    data() {
-        return {
-            now: Math.trunc((new Date()).getTime() / 1000)
-        }
-    },
-
-    computed: {
-        seconds() {
-            return (this.date - this.now) % 60;
+        props: {
+            date: null,
         },
 
-        minutes() {
-            return Math.trunc((this.date - this.now) / 60) % 60;
+        data: function() {
+            return {
+                now: Math.trunc((new Date()).getTime() / 1000),
+                event: this.date,
+            }
         },
 
-        hours() {
-            return Math.trunc((this.date - this.now) / 60 / 60) % 24;
-        },
+        computed: {
+            // using computed to take care of the calculation per the doc
+            calculatedDate: function() {
+                return this.event = Math.trunc(Date.parse(this.event) / 1000);
+            },
+            seconds: function() {
+                return (this.calculatedDate - this.now) % 60;
+            },
 
-        days() {
-            return Math.trunc((this.date - this.now) / 60 / 60 / 24);
+            minutes: function() {
+                return Math.trunc((this.calculatedDate - this.now) / 60) % 60;
+            },
+
+            hours: function() {
+                return Math.trunc((this.calculatedDate - this.now) / 60 / 60) % 24;
+            },
+
+            days: function() {
+                return Math.trunc((this.calculatedDate - this.now) / 60 / 60 / 24);
+            }
+        },
+        
+        // new ready function
+        mounted: function () {
+            window.setInterval(() => {
+                this.now = Math.trunc((new Date()).getTime() / 1000);
+            },1000);
         }
     }
-}
-
 </script>
 <style>
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400|Roboto:100);
-
 .block {
     display: flex;
     flex-direction: column;
     margin: 20px;
 }
-
 .text {
     color: #1abc9c;
     font-size: 40px;
@@ -76,7 +76,6 @@ export default {
     margin-bottom: 10px;
     text-align: center;
 }
-
 .digit {
     color: #ecf0f1;
     font-size: 150px;
